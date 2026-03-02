@@ -8,8 +8,8 @@ const ProtectedRoute = () => {
 
     if (loading) {
         return (
-            <div className="flex h-screen w-full items-center justify-center bg-gray-50">
-                <Loader2 className="h-10 w-10 animate-spin text-indigo-600" />
+            <div className="flex-center">
+                <Loader2 className="animate-spin text-primary" size={32} />
             </div>
         );
     }

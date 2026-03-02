@@ -1,64 +1,78 @@
-# User JWT Auth App
+# User Auth App 🛡️
 
-A full-stack web application built with a modern decoupled architecture.
+A modern, secure User Authentication application built with a React frontend and Node.js/Express backend. This project features JWT-based authentication, password hashing with Bcrypt, and a MySQL database.
 
-## Tech Stack
-* **Frontend**: React (Vite), React Router, Context API, Vanilla CSS (Custom Design System).
-* **Backend**: Node.js, Express.js.
-* **Database**: MySQL.
-* **Authentication**: JSON Web Tokens (JWT) + Bcrypt password hashing.
+## ✨ Features
 
----
+-   **User Registration**: Secure sign-up with password hashing.
+-   **JWT Authentication**: Stateless authentication using JSON Web Tokens.
+-   **Protected Routes**: Advanced frontend routing to secure the dashboard.
+-   **MySQL Database**: Persistent storage for user profiles and credentials.
+-   **Modern UI/UX**: Professional design with glassmorphism and micro-animations.
+-   **Responsive Design**: Fully functional on mobile, tablet, and desktop.
+
+## 🛠️ Tech Stack
+
+### Frontend
+-   **React 19** (Vite)
+-   **React Router Dom v7**
+-   **Axios** for API requests
+-   **Lucide React** for beautiful icons
+
+### Backend
+-   **Node.js & Express**
+-   **MySQL2** with connection pooling
+-   **JSONWebToken (JWT)** for security
+-   **Bcrypt.js** for password encryption
+-   **Dotenv** for environment management
+-   **CORS** enabled for cross-origin requests
 
 ## 🚀 Getting Started
 
-### 1. Database Setup (MySQL)
-Make sure you have MySQL installed and running on your system.
-Create a new database for this project:
+### Prerequisites
+-   Node.js installed
+-   MySQL server running
+
+### 1. Database Setup
+Create a database named `jwt_auth_app` in your MySQL server:
 ```sql
 CREATE DATABASE jwt_auth_app;
 ```
 
-### 2. Backend Setup
-Navigate to the server directory and configure your environment variables:
-```bash
-cd server
-```
-
-Open `server/.env` and update your MySQL connection details (specifically the `DB_PASSWORD`):
+### 2. Configuration
+Create a `.env` file in the `server` directory and add your credentials:
 ```env
 PORT=5000
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=your_mysql_password_here
+DB_PASSWORD=your_mysql_password
 DB_NAME=jwt_auth_app
-JWT_SECRET=supersecret12345
+JWT_SECRET=your_random_secret_here
 ```
 
-Start the backend server (it will automatically create the required `users` table):
+### 3. Installation
+Install dependencies for both the server and client:
+
 ```bash
+# Install backend dependencies
+cd server
+npm install
+
+# Install frontend dependencies
+cd ../client
+npm install
+```
+
+### 4. Running the App
+Start both servers simultaneously:
+
+```bash
+# In the server directory
 npm run dev
-# OR: npx nodemon server.js
-```
 
-### 3. Frontend Setup
-In a new terminal window, navigate to the client directory:
-```bash
-cd client
-```
-
-Start the React development server:
-```bash
+# In the client directory
 npm run dev
 ```
 
-Visit the frontend at **http://localhost:5173/**.
-
----
-
-## Features Implemented
-* **Secure Authentication Flow**: Fully functional Login and Registration using hashed passwords and JWTs.
-* **Protected Routes**: React Router wrapper that safely handles redirecting unauthenticated users to the login screen.
-* **Global Auth Context**: Manages instantaneous UI updates upon login/logout.
-* **Dynamic Aesthetics**: Includes an elegant, premium CSS layout with hover effects, custom typography, animations, and beautiful responsive cards for the Dashboard.
-* **REST API**: Structured properly using Controllers, Models (via MySQL queries directly), and Route files.
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
